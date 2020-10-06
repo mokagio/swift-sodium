@@ -20,11 +20,13 @@ s.source_files = 'Sodium/**/*.{swift,h}'
 s.private_header_files = 'Sodium/libsodium/*.h'
 
 s.pod_target_xcconfig = {
-       'SWIFT_INCLUDE_PATHS' => '$(inherited) "${PODS_XCFRAMEWORKS_BUILD_DIR}/Clibsodium"'
+       'SWIFT_INCLUDE_PATHS' => '$(inherited) "${PODS_XCFRAMEWORKS_BUILD_DIR}/Clibsodium"',
+       'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
 }
 
 s.user_target_xcconfig = {
-       'SWIFT_INCLUDE_PATHS' => '$(inherited) "${PODS_XCFRAMEWORKS_BUILD_DIR}/Clibsodium"'
+       'SWIFT_INCLUDE_PATHS' => '$(inherited) "${PODS_XCFRAMEWORKS_BUILD_DIR}/Clibsodium"',
+       'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
 }
 
 s.requires_arc = true
