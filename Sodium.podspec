@@ -21,8 +21,18 @@ s.source_files = 'Sodium/**/*.{swift,h}'
 s.private_header_files = 'Sodium/libsodium/*.h'
 
 s.preserve_paths = 'Sodium/libsodium/module.modulemap'
+
+# Xcode 12 changed the way apps are built because of the upcoming support for
+# Apple Silicon. We need explicitly exclude the arm64 architecture.
+# More info at
+# https://stackoverflow.com/questions/63607158/xcode-12-building-for-ios-simulator-but-linking-in-object-file-built-for-ios
 s.pod_target_xcconfig = {
-	'SWIFT_INCLUDE_PATHS' => '$(PODS_TARGET_SRCROOT)/Sodium/libsodium',
+  'SWIFT_INCLUDE_PATHS' => '$(PODS_TARGET_SRCROOT)/Sodium/libsodium',
+  'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
+}
+
+s.user_target_xcconfig = {
+  'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64'
 }
 
 s.requires_arc = true
