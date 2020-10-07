@@ -32,6 +32,11 @@ s.pod_target_xcconfig = {
   'EXCLUDED_ARCHS[sdk=watchsimulator*]' => 'arm64',
 }
 
+# Notice that a CocoaPods contributor discourages the use of
+# `user_target_xcconfig`, but in this case also agrees that there might not be
+# a better approach.
+# See
+# https://github.com/CocoaPods/CocoaPods/issues/10065#issuecomment-701055569
 s.user_target_xcconfig = {
   'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'arm64',
   'EXCLUDED_ARCHS[sdk=watchsimulator*]' => 'arm64',
