@@ -1,6 +1,10 @@
 Pod::Spec.new do |s|
   s.name = 'Sodium-Fork'
-  s.version = '0.8.1'
+  # This for is a temporary measure (hopefully). As such, it should be a
+  # drop-in replacement, consumers should not be required to update their
+  # source code to import a differnt framework.
+  s.module_name = 'Sodium'
+  s.version = '0.8.2'
   s.license = { :type => "ISC", :file => 'LICENSE' }
   s.summary = 'A temporary fork of Swift-Sodium to workaround a CocoaPods validation issue'
   s.description = <<-DESC
@@ -11,17 +15,17 @@ Pod::Spec.new do |s|
 
                      ```diff
                      - spec.dependency "Sodium"
-                     + spec.dependency "Sodium-Fork", "0.8.1"
+                     + spec.dependency "Sodium-Fork", "0.8.2"
                      ```
 
-                     **Warning** The `0.8.1` setup only works with CocoaPods 1.9.3 and Xcode 12.0.
+                     **Warning** The `0.8.2` setup only works with CocoaPods 1.9.3 and Xcode 12.0.
                      Both CocoaPods 1.10.0 and Xcode 12.2 have changes that result in failed validation.
   DESC
   s.homepage = 'https://github.com/mokagio/swift-sodium'
   s.social_media_url = 'https://twitter.com/mokagio'
   s.authors = { 'Frank Denis' => '' }
   s.source = { :git => 'https://github.com/mokagio/swift-sodium.git',
-               :tag => '0.8.1' }
+               :tag => '0.8.2' }
 
   s.ios.deployment_target = '8.0'
   s.osx.deployment_target = '10.11'
