@@ -13,6 +13,9 @@ Pod::Spec.new do |s|
                      - spec.dependency "Sodium"
                      + spec.dependency "Sodium-Fork", "0.8.1"
                      ```
+
+                     **Warning** The `0.8.1` setup only works with CocoaPods 1.9.3 and Xcode 12.0.
+                     Both CocoaPods 1.10.0 and Xcode 12.2 have changes that result in failed validation.
   DESC
   s.homepage = 'https://github.com/mokagio/swift-sodium'
   s.social_media_url = 'https://twitter.com/mokagio'
